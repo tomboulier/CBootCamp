@@ -61,7 +61,8 @@ Matrix *createMatrix(int nrows, int ncols)
 
 void destroyMatrix(Matrix *M)
 {
-  // fill in the code here
+  free((*M).data);
+  free(M);
 }
 
 void printmat(Matrix *M)
@@ -79,12 +80,11 @@ void printmat(Matrix *M)
 void matrixmult(Matrix *A, Matrix *B, Matrix *C)
 {
   // (*C) = (*A) * (*B)
-    // remplissage de la matrice
-  // C_{ij} = \sum_k A_{ik} B_{kj}
 
+  // remplissage de la matrice
+  // C_{ij} = \sum_k A_{ik} B_{kj}
   for(int i = 0; i < (*A).nrows ; i++){
     for(int j = 0 ; j < (*B).ncols ; j++){     
-      //double tmp = 0;
       for(int k = 0 ; k < (*A).ncols ; k++){
         (*C).data[i*(*C).ncols+j] += (*A).data[i*(*A).ncols+k]*(*B).data[k*(*B).ncols+j];
       }
