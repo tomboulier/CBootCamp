@@ -1,3 +1,3 @@
 # CBootCamp
 
-Exercices from http://gribblelab.org/cbootcamp/
+Exercices from https://gribblelab.org/CBootCamp/
